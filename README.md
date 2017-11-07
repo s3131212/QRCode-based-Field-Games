@@ -32,7 +32,7 @@
 `question` 物件包含所有題目與其標題。  
 `password` 為解密用的密碼，在啟動 `request_token` 的情況下為請求密碼的 token。
 若有啟用 `request_token`，則會夾帶 `password` 送一個 POST 請求給指定網址，並將回傳值視為解密用的密碼。  
-若有啟用 `upload_data`，則在「資訊」的地方會有上傳按鈕，按下後會把解題成果以 `data` 欄位 POST 給指定網址。  
+若有啟用 `upload_data`，則在「資訊」的地方會有上傳按鈕，按下後會把解題成果以 `data` 欄位，用戶名以 `username` 欄位 POST 給指定網址。  
 註：若使用 requestbin 做為上傳網址，會因為 CORS 而無法上傳，但在 requestbin 上仍然可以看到請求。  
 最後將此 JSON [轉成 QR Code](https://www.google.com.tw/search?q=qrcode+generator) 即可。  
 

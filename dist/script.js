@@ -129,6 +129,7 @@ $('#upload_btn').on('click', function(){
         type: 'POST',
         dataType: 'text',
         data: {
+            username: initdata['username'],
             data: JSON.stringify(counter)
         },
         success: function(data){
