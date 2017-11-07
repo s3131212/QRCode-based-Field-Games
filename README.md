@@ -1,6 +1,12 @@
 # QR Code-based-Field-Games
 
 這是用於戶外大地闖關遊戲的程式，使用 QR Code 當做闖關點，掃描 QR Code 後會出現題目。
+![](https://user-images.githubusercontent.com/4427280/32505606-422a3e96-c3a8-11e7-9876-3a90fe72466c.gif)
+
+## 特色
+1. 完全使用 Web 技術，用戶不用安裝任何軟體  
+2. 除第一次載入外，可在離線環境下進行遊戲  
+3. 支援遠端取得密碼與上傳資料
 
 ## 使用流程
 1. 將檔案上傳至自己的伺服器或使用 [GitHub Page 的版本](https://s3131212.github.io/QRCode-based-Field-Games/)  
