@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scanner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="dist/sweetalert.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="dist/sweetalert.min.js"></script>
+    <style type="text/css">
+        html, body, .container{
+            height: 100%;
+        }
+        #video, #canvas {
+            margin-top: 15px;
+            width: 100%;
+            height: 80%;
+        }
+        .sweet-alert h2 {
+            margin-top: 30px;
+        }
+        .modal-footer{
+            text-align: left;
+        }
+    </style>
+
+    <script type="text/javascript" src="dist/jsQR.js"></script>
+    <script type="text/javascript" src="dist/aes.js"></script>
+    <script type="text/javascript" src="dist/pad-zeropadding-min.js"></script>
+    <script>
+        if (navigator.serviceWorker) {
+            navigator.serviceWorker.register('cache.js', {scope: '.'})
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <!--<div id="scanner"></div>-->
+        <video id="video" autoplay="true" playsinline muted></video>
+        <canvas id="canvas" style="display: none;"></canvas>
+
+        <div class="row">
+            <button type="button" class="col-sm-6 col-sm-offset-3 col-xs-offset-3 col-xs-6 col-md-6 col-md-offset-3 btn btn-info" id="info-btn" disabled="disabled">資訊</button>
+        </div>
+    </div>
+
+    <div class="modal fade" id="question_box" tabindex="-1" role="dialog" aria-labelledby="question_box" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+                    <h4 class="modal-title" id="question_box" data-name="title"></h4>
+                </div>
+                <div class="modal-body">
+                    <p data-name="context"></p>
+                    
+                </div>
+                <div class="modal-footer">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default answer_button" data-name='A'>A</button>
+                        <button type="button" class="btn btn-default answer_button" data-name='B'>B</button>
+                        <button type="button" class="btn btn-default answer_button" data-name='C'>C</button>
+                        <button type="button" class="btn btn-default answer_button" data-name='D'>D</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="contest_data" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" data-table="contest_title"></h4>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <tr>
+                            <td>答對</td>
+                            <td data-table="correct_count"></td>
+                        </tr>
+                        <tr>
+                            <td>答錯</td>
+                            <td data-table="wrong_count"></td>
+                        </tr>
+                        <tr>
+                            <td>用戶名</td>
+                            <td data-table="username"></td>
+                        </tr>
+                    </table>
+                    <div class="row">
+                        <button type="button" class="btn btn-primary col-md-6" id="upload_btn">上傳</button>
+                        <button type="button" class="btn btn-link col-md-offset-3 col-md-3" id="reset_btn">重置</button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="dist/script.js"></script>
+</body>
+
+</html>
