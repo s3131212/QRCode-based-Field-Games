@@ -2,7 +2,7 @@
 
 這是用於戶外大地闖關遊戲的程式，使用 QR Code 當做闖關點，掃描 QR Code 後會出現題目。
 
-##使用流程
+## 使用流程
 1. 將檔案上傳至自己的伺服器或使用 [GitHub Page 的版本](https://s3131212.github.io/QRCode-based-Field-Games/)  
 註：需要有 HTTPS 才能存取鏡頭，且若有需要上傳題目或許得 token 等，要注意 CORS 問題。
 2. 製作初始化 QR Code  
